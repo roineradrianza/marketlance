@@ -71,7 +71,7 @@ class GigFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'featured_image' => "https://picsum.photos/1200/720?random=" . mt_rand(1, 55000),
-            'description' => $this->faker->text(1500),
+            'description' => $this->faker->realText(1200, 3),
             'status' => rand(0, 2),
             'user_id' => rand(1, 20),
             'category_id' => rand(1, 5),
