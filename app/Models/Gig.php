@@ -6,10 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Gigs\Requirement;
-use App\Models\Gigs\Faq;
-use App\Models\Gigs\Package;
-use App\Models\Gigs\Tag;
+use App\Models\Gigs\{Requirement, Faq, Package, Tag, Rating, Order};
 use App\Models\User;
 
 class Gig extends Model
@@ -54,5 +51,15 @@ class Gig extends Model
     public function tags()
     {
         return $this->hasMany(Tag::class);
+    }
+    
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
+        
+    public function orders()
+    {
+        return $this->hasMany(Rating::class);
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Gig;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 class GigController extends Controller
 {
@@ -44,9 +46,16 @@ class GigController extends Controller
      * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function show(Gig $gig)
+    public function show($user, $gig)
     {
-        //
+        $gig = Gig::where('slug', '=', $gig, 'AND', 'user_id', '=', $user, 'OR', 'username', '=', $user)
+            ->firstOrFail()
+            ->load('user', 'packages', 'requirements', 'faqs', 'tags', 'ratings');
+        return Inertia::render('Gigs/Show', [
+            'gig' => $gig,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+        ]);
     }
 
     /**
