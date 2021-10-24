@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\{HomeController, GigController, UserController};
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,13 +16,17 @@ use Inertia\Inertia;
  */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::prefix('{username}', 'user')->group(
-    function () {
-        Route::get('/{slug}', function () {
-            return false;
-        });
-    }
-);
+Route::group(['prefix' => '{user}', 'as' => 'username.'], function () {
+
+    Route::get('/', function ($user) {
+    })->name('show');
+
+    Route::get('/{gig}', function ($user, $gig) {
+        $GigController = new GigController;
+        return $GigController->show($user, $gig);
+    })->name('gig.show');
+
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get(
     '/dashboard', function () {

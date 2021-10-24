@@ -45,23 +45,7 @@
           v-for="(gig, i) in gigs"
           :key="i"
         >
-          <div class="card text-center shadow-2xl">
-            <figure class="px-10 pt-10">
-              <img :src="gig.featured_image" class="rounded-xl" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">{{ gig.title }}</h2>
-
-              <div class="justify-center card-actions">
-                <a
-                  class="btn btn-outline btn-white"
-                  :href="gig.user.id + '/' + gig.slug"
-                >
-                  ${{ parseFloat(gig.packages[0].price).toFixed(2) }}
-                </a>
-              </div>
-            </div>
-          </div>
+          <Gig :gig="gig" />
         </div>
       </div>
     </div>
@@ -113,12 +97,14 @@
 import { defineComponent } from "vue";
 import Header from "@/Layouts/Header.vue";
 import Footer from "@/Layouts/Footer.vue";
+import Gig from "@/Pages/Gigs/Card.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 
 export default defineComponent({
   components: {
     Head,
     Link,
+    Gig,
     Header,
     Footer,
   },
