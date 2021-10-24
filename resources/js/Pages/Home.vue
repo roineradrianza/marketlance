@@ -128,7 +128,6 @@ export default defineComponent({
     canLogin: Boolean,
     canRegister: Boolean,
     gigs: Array,
-    categories: Array,
   },
 });
 </script>

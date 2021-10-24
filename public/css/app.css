@@ -3625,10 +3625,6 @@ html {
 	--tw-bg-opacity: 1;
 	background-color: hsla(var(--pc) / var(--tw-bg-opacity));
 }
-.bg-base-100 {
-	--tw-bg-opacity: 1;
-	background-color: hsla(var(--b1) / var(--tw-bg-opacity));
-}
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
 }

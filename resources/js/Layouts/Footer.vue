@@ -1,13 +1,19 @@
 <template>
-  <footer class="p-5 md:p-20  footer bg-base-200 text-base-content">
+  <footer class="p-5 md:p-20 footer bg-base-200 text-base-content">
     <div>
-      <application-logo/>
-      <p>MarketLance LLC. <br />Providing reliable freelance services since 2020</p>
+      <application-logo />
+      <p>
+        MarketLance LLC. <br />Providing reliable freelance services since 2020
+      </p>
     </div>
     <div>
-      
       <span class="footer-title">Services</span>
-      <a class="link link-hover capitalize" :href="'category/' + category.slug" v-for="category, i in $page.props.categories" :key="i">
+      <a
+        class="link link-hover capitalize"
+        :href="'category/' + category.slug"
+        v-for="(category, i) in $page.props.categories"
+        :key="i"
+      >
         {{ category.name }}
       </a>
     </div>
@@ -32,6 +38,11 @@ export default defineComponent({
   },
   props: {
     categories: Array,
+  },
+  created() {
+    fetch(route('categories.latest'))
+    .then( res => res.json())
+    .then( data => this.$page.props.categories = data)
   }
 });
 </script>
