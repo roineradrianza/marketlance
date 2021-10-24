@@ -2,7 +2,7 @@
   <Head title="Home" />
 
   <div class="min-h-screen bg-base-200 dark:bg-gray-900 sm:pt-0">
-    <Header :canLogin="$page.props.canLogin" :canRegister="$page.props.canRegister" />
+    <Header :canLogin="canLogin" :canRegister="canRegister" />
 
     <div class="hero min-h-screen bg-base-200">
       <div class="flex-col hero-content lg:flex-row-reverse">
@@ -42,7 +42,7 @@
       <div class="grid grid-cols-12 gap-6">
         <div
           class="col-span-12 md:col-span-4"
-          v-for="(gig, i) in $page.props.gigs"
+          v-for="(gig, i) in gigs"
           :key="i"
         >
           <div class="card text-center shadow-2xl">
@@ -106,12 +106,11 @@
       </div>
     </div>
   </div>
-  <Footer :categories="$page.props.categories" />
+  <Footer/>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import ApplicationLogo from "@/Jetstream/ApplicationLogoWhite.vue";
 import Header from "@/Layouts/Header.vue";
 import Footer from "@/Layouts/Footer.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";

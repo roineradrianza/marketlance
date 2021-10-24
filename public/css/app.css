@@ -2362,6 +2362,11 @@ html {
 	cursor: not-allowed;
 	--tw-text-opacity: 0.2;
 }
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
 .tab {
 	cursor: pointer;
 	display: inline-flex;
@@ -3059,6 +3064,75 @@ html {
 .tab:focus-visible {
 	box-shadow: inset 0 0 0 2px currentColor;
 }
+.tab-bordered {
+	--tw-border-opacity: 1;
+	--tw-border-opacity: 0.2;
+	border-color: hsla(var(--bc)/var(--tw-border-opacity,1));
+	border-style: solid;
+	border-bottom-width: calc(var(--tab-border, 1px) + 1px);
+}
+.tab-lifted.tab-active {
+	--tw-bg-opacity: 1;
+	background-color: hsla(var(--b1)/var(--tw-bg-opacity,1));
+	border-left-width: var(--tab-border,1px);
+	border-bottom-width: 0;
+	border-right-width: var(--tab-border,1px);
+	border-top-width: var(--tab-border,1px);
+	border-left-color: hsla(var(--border-color,var(--b3))/var(--tw-border-opacity,1));
+	border-right-color: hsla(var(--border-color,var(--b3))/var(--tw-border-opacity,1));
+	border-top-color: hsla(var(--border-color,var(--b3))/var(--tw-border-opacity,1));
+	padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
+	padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
+	padding-bottom: var(--tab-border,1px);
+	padding-top: 0;
+}
+.tab-lifted.tab-active:after,.tab-lifted.tab-active:before {
+	z-index: 1;
+	content: "";
+	display: block;
+	position: absolute;
+	width: var(--tab-radius,.5rem);
+	height: var(--tab-radius,.5rem);
+	bottom: 0;
+	--tab-grad: calc(68% - var(--tab-border, 1px));
+	--tab-corner-bg: radial-gradient(circle at var(--circle-pos),transparent var(--tab-grad),hsla(var(--border-color,var(--b3))/var(--tw-border-opacity,1)) calc(var(--tab-grad) + 0.3px),hsla(var(--border-color,var(--b3))/var(--tw-border-opacity,1)) calc(var(--tab-grad) + var(--tab-border, 1px)),hsla(var(--b1)/var(--tw-border-opacity,1)) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
+}
+.tab-lifted.tab-active:before {
+	left: calc(var(--tab-radius, .5rem)*-1);
+	--circle-pos: top left;
+	background-image: var(--tab-corner-bg);
+}
+[dir=rtl] .tab-lifted.tab-active:before {
+	--circle-pos: top right;
+}
+.tab-lifted.tab-active:after {
+	right: calc(var(--tab-radius, .5rem)*-1);
+	--circle-pos: top right;
+	background-image: var(--tab-corner-bg);
+}
+[dir=rtl] .tab-lifted.tab-active:after {
+	--circle-pos: top left;
+}
+.tab-lifted.tab-active:first-child:before {
+	background: none;
+}
+.tab-lifted.tab-active:last-child:after {
+	background: none;
+}
+.tab-lifted.tab-active+.tab-lifted.tab-active:before {
+	background: none;
+}
+.tabs-boxed .tab-active {
+	--tw-bg-opacity: 1;
+	background-color: hsla(var(--p)/var(--tw-bg-opacity,1));
+	--tw-text-opacity: 1;
+	color: hsla(var(--pc)/var(--tw-text-opacity,1));
+	border-radius: var(--rounded-btn,.5rem);
+}
+.tabs-boxed .tab-active:hover {
+	--tw-text-opacity: 1;
+	color: hsla(var(--pc)/var(--tw-text-opacity,1));
+}
 .table tr.active:nth-child(2n) td,.table tr.active:nth-child(2n) th,.table tr.active td,.table tr.active th {
 	--tw-bg-opacity: 1;
 	background-color: hsla(var(--b3)/var(--tw-bg-opacity,1));
@@ -3753,6 +3827,9 @@ html {
 .pt-10 {
 	padding-top: 2.5rem;
 }
+.pt-20 {
+	padding-top: 5rem;
+}
 .text-left {
 	text-align: left;
 }
@@ -4385,6 +4462,22 @@ html {
 
 	.md\:col-span-4 {
 		grid-column: span 4 / span 4;
+	}
+
+	.md\:col-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.md\:col-span-7 {
+		grid-column: span 7 / span 7;
+	}
+
+	.md\:col-span-8 {
+		grid-column: span 8 / span 8;
+	}
+
+	.md\:col-span-5 {
+		grid-column: span 5 / span 5;
 	}
 
 	.md\:mt-0 {
