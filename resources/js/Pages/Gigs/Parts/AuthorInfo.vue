@@ -24,7 +24,7 @@
             (180)
           </div>
           <div class="flex flex-row">
-            <button class="btn btn-outline btn-sm mt-5">Contact me</button>
+            <a :href="route('username.show', author.username)" class="btn btn-outline btn-sm mt-5">Contact me</a>
           </div>
         </div>
       </div>

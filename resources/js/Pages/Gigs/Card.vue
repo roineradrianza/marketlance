@@ -9,7 +9,7 @@
       <div class="justify-center card-actions">
         <a
           class="btn btn-outline btn-white"
-          :href="gig.user.id + '/' + gig.slug"
+          :href="route('username.gig.show', [gig.user.username, gig.slug])"
         >
           ${{ parseFloat(gig.packages[0].price).toFixed(2) }}
         </a>

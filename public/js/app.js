@@ -24920,7 +24920,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "btn btn-outline btn-white",
-    href: _ctx.gig.user.id + '/' + _ctx.gig.slug
+    href: _ctx.route('username.gig.show', [_ctx.gig.user.username, _ctx.gig.slug])
   }, " $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(parseFloat(_ctx.gig.packages[0].price).toFixed(2)), 9
   /* TEXT, PROPS */
   , _hoisted_7)])])]);
@@ -25049,14 +25049,10 @@ var _hoisted_8 = {
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" (180) ");
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_10 = {
   "class": "flex flex-row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-outline btn-sm mt-5"
-}, "Contact me")], -1
-/* HOISTED */
-);
-
+};
+var _hoisted_11 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_StarIcon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("StarIcon");
 
@@ -25071,7 +25067,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     });
   }), 64
   /* STABLE_FRAGMENT */
-  )), _hoisted_9]), _hoisted_10])])])])], 64
+  )), _hoisted_9]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: _ctx.route('username.show', _ctx.author.username),
+    "class": "btn btn-outline btn-sm mt-5"
+  }, "Contact me", 8
+  /* PROPS */
+  , _hoisted_11)])])])])])], 64
   /* STABLE_FRAGMENT */
   );
 }
