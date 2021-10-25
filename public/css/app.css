@@ -3362,6 +3362,12 @@ html {
 .-mb-px {
 	margin-bottom: -1px;
 }
+.mb-8 {
+	margin-bottom: 2rem;
+}
+.mt-20 {
+	margin-top: 5rem;
+}
 .block {
 	display: block;
 }
@@ -3409,6 +3415,12 @@ html {
 }
 .h-24 {
 	height: 6rem;
+}
+.h-60 {
+	height: 15rem;
+}
+.h-44 {
+	height: 11rem;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -3460,6 +3472,9 @@ html {
 }
 .w-24 {
 	width: 6rem;
+}
+.w-44 {
+	width: 11rem;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -3571,6 +3586,15 @@ html {
 }
 .gap-1 {
 	gap: 0.25rem;
+}
+.gap-8 {
+	gap: 2rem;
+}
+.gap-10 {
+	gap: 2.5rem;
+}
+.gap-12 {
+	gap: 3rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
@@ -4545,6 +4569,14 @@ html {
 
 	.md\:col-span-5 {
 		grid-column: span 5 / span 5;
+	}
+
+	.md\:col-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.md\:col-span-8 {
+		grid-column: span 8 / span 8;
 	}
 
 	.md\:mt-0 {

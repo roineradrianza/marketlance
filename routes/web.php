@@ -18,8 +18,7 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index']);
 Route::group(['prefix' => '{user}', 'as' => 'username.'], function () {
 
-    Route::get('/', function ($user) {
-    })->name('show');
+    Route::get('/', [UserController::class, 'show'])->name('show');
 
     Route::get('/{gig}', function ($user, $gig) {
         $GigController = new GigController;
