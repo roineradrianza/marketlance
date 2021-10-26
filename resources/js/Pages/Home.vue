@@ -1,10 +1,10 @@
 <template>
   <Head title="Home" />
 
-  <div class="min-h-screen bg-base-200 dark:bg-gray-900 sm:pt-0">
+  <div class="min-h-screen dark:bg-gray-900 sm:pt-0">
     <Header :canLogin="canLogin" :canRegister="canRegister" />
 
-    <div class="hero min-h-screen bg-base-200">
+    <div class="hero min-h-screen ">
       <div class="flex-col hero-content lg:flex-row-reverse">
         <img
           src="https://images.unsplash.com/photo-1634058844916-c82605c76a9c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid bg-base-200 py-10 md:py-5 md:pb-20 px-5 md:px-20">
+    <div class="container-fluid py-10 md:py-5 md:pb-20 px-5 md:px-20">
       <div class="grid grid-cols-12 gap-6">
         <div
           class="col-span-12 md:col-span-4"
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid bg-base-200 py-8 md:py-5">
+    <div class="container-fluid py-8 md:py-5">
       <div class="flex flex-col flex-col-reverse md:flex-row px-4 md:px-20">
         <div class="flex items-center">
           <div>

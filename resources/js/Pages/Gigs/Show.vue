@@ -4,7 +4,6 @@
   <div
     class="
       min-h-screen
-      bg-base-200
       dark:bg-gray-900
       sm:pt-0
       flex
@@ -16,7 +15,7 @@
       :canRegister="$page.props.canRegister"
     />
 
-    <div class="container bg-base-200 pt-20 md:pb-20 px-5 md:px-20">
+    <div class="container pt-20 md:pb-20 px-5 md:px-20">
       <div class="grid grid-cols-12 gap-6 pt-10">
         <div class="col-span-12 md:col-span-7">
           <div class="card text-center shadow-2xl">

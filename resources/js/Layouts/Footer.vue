@@ -1,5 +1,5 @@
 <template>
-  <footer class="p-5 md:p-20 footer bg-base-200 text-base-content">
+  <footer class="p-5 md:p-20 footer  text-base-content">
     <div>
       <application-logo />
       <p>

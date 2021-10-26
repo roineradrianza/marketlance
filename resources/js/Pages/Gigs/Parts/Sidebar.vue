@@ -21,7 +21,7 @@
               leading-normal
             "
             :class="{
-              'text-white bg-base-200': openTab !== i,
+              'text-white': openTab !== i,
               'text-base-200 bg-white': openTab === i,
             }"
           >

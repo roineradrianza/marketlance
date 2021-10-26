@@ -1,16 +1,15 @@
 <template>
-  <div class="card border p-2">
-      <div class="card-title">title</div>
-      <p class="uppercase text-sm mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-        voluptates veniam saepe. Distinctio dicta tempora, assumenda culpa ipsam
-        magni hic perspiciatis molestiae, esse natus cumque accusantium, dolorem
-        dignissimos dolor eaque.
-      </p>
+  <div class="card shadow-lg">
+    <figure>
+      <img :src="gig.featured_image" />
+    </figure>
+    <div class="p-3">
+      <div class="card-title">{{ gig.title }}</div>
       <div class="justify-center card-actions">
         <button class="btn btn-outline text-md">Continue</button>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
