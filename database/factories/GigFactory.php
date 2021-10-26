@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Gig;
-use App\Models\Gigs\Package;
-use App\Models\Gigs\Requirement;
+use App\Models\User;
+use App\Models\Gigs\{Package, Requirement, Order, Rating};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GigFactory extends Factory
@@ -36,9 +36,9 @@ class GigFactory extends Factory
                 'revisions' => rand(-1, 10),
                 'gig_id' => $gig->id,
             ];
-            $data[] = $row;
+            $package = Package::create($row);
+            $this->addOrders($gig, $package);
         }
-        Package::insert($data);
     }
 
     public function addRequeriments(Gig $gig)
@@ -55,6 +55,50 @@ class GigFactory extends Factory
             $data[] = $row;
         }
         Requirement::insert($data);
+
+    }
+
+    public function addOrders(Gig $gig, Package $package)
+    {
+
+        $rand_orders = rand(1, 15);
+        $users = User::where('id', '!=', $gig->user_id)->get('id');
+
+        for ($i = 0; $i <= $rand_orders; $i++) {
+            $buyer = $users[rand(1, 18)];
+            $row = [
+                'status' => 1,
+                'amount' => $package->price,
+                'seller_id' => $gig->user_id,
+                'buyer_id' => $buyer->id,
+                'package_id' => $package->id,
+                'gig_id' => $gig->id,
+            ];
+            $order = Order::create($row);
+            $this->addRatings($order);
+        }
+
+    }
+
+    public function addRatings(Order $order)
+    {
+
+        $data = [];
+        $rating_type = ['seller', 'buyer'];
+
+        for ($e=0; $e <= 1; $e++) { 
+            $row = [
+                'comment' => $this->faker->text(),
+                'rating_type' => $rating_type[$e],
+                'rating' => rand(3, 5),
+                'seller_id' => $order->seller_id,
+                'buyer_id' => $order->buyer_id,
+                'order_id' => $order->id,
+            ];
+            $data[] = $row;
+        }
+
+        Rating::insert($data);
 
     }
 

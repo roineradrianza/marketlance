@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gig;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-class GigController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,16 +43,16 @@ class GigController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gig  $gig
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($user, $gig)
+    public function show($user)
     {
-        $gig = Gig::where('slug', '=', $gig, 'AND', 'user_id', '=', $user, 'OR', 'username', '=', $user)
+        $user = User::where('username', $user)
             ->firstOrFail()
-            ->load('user', 'packages', 'requirements', 'faqs', 'tags', 'orders');
-        return Inertia::render('Gigs/Show', [
-            'gig' => $gig,
+            ->load('gigs', 'seller_ratings.buyer', 'buyer_ratings.seller');
+        return Inertia::render('Users/Show', [
+            'user' => $user,
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);
@@ -61,10 +61,10 @@ class GigController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gig  $gig
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gig $gig)
+    public function edit(User $user)
     {
         //
     }
@@ -73,10 +73,10 @@ class GigController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gig  $gig
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gig $gig)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -84,10 +84,10 @@ class GigController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gig  $gig
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gig $gig)
+    public function destroy(User $user)
     {
         //
     }

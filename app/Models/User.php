@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Gig;
+use App\Models\Gigs\{Order, Rating};
 
 class User extends Authenticatable
 {
@@ -64,5 +65,26 @@ class User extends Authenticatable
     public function gigs()
     {
         return $this->hasMany(Gig::class);
+    }
+
+    
+    public function buyer_orders()
+    {
+        return $this->hasMany(Order::class, 'id', 'buyer_id');
+    }
+    
+    public function seller_orders()
+    {
+        return $this->hasMany(Order::class, 'id', 'seller_id');
+    }
+
+    public function buyer_ratings()
+    {
+        return $this->hasMany(Rating::class, 'buyer_id', 'id');
+    } 
+
+    public function seller_ratings()
+    {
+        return $this->hasMany(Rating::class, 'seller_id', 'id');
     }
 }
