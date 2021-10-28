@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            BioSeeder::class
+        ]);
         // \App\Models\User::factory(20)->create();
         // \App\Models\Category::factory(5)->create();
         // \App\Models\Gig::factory(30)->create();

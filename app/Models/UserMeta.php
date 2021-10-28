@@ -5,7 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\User;
+
 class UserMeta extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'meta_name',
+        'meta_val'
+    ];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

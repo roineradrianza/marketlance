@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Gig;
+use App\Models\UserMeta;
 use App\Models\Gigs\{Order, Rating};
 
 class User extends Authenticatable
@@ -62,11 +63,15 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function metas()
+    {
+        return $this->hasMany(UserMeta::class);
+    }
+
     public function gigs()
     {
         return $this->hasMany(Gig::class);
     }
-
     
     public function buyer_orders()
     {

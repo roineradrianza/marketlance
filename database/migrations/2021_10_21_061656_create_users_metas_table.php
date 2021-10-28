@@ -15,8 +15,8 @@ class CreateUsersMetasTable extends Migration
     {
         Schema::create('user_metas', function (Blueprint $table) {
             $table->id();
-            $table->string('meta_val');
-            $table->text('meta_name');
+            $table->text('meta_val');
+            $table->string('meta_name');
 
             $table->foreignId('user_id')->constrained();
 
