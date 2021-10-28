@@ -13,6 +13,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Gig;
 use App\Models\UserMeta;
 use App\Models\Gigs\{Order, Rating};
+use App\Models\Users\{Education, Language, Skill};
 
 class User extends Authenticatable
 {
@@ -91,5 +92,21 @@ class User extends Authenticatable
     public function seller_ratings()
     {
         return $this->hasMany(Rating::class, 'seller_id', 'id');
+    }
+
+
+    public function educations()
+    {
+        return $this->hasMany(Education::class);
+    }
+
+    public function languages()
+    {
+        return $this->hasMany(Language::class);
+    }
+    
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
     }
 }
