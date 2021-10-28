@@ -3,9 +3,7 @@
     <div class="w-full">
       <h4 class="card-title">Description</h4>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-        laboriosam ex at et laborum eaque velit similique amet? Eius cupiditate
-        qui nobis aut quas voluptates, expedita beatae corrupti voluptatem eum!
+        {{ meta.bio }}
       </p>
       <div class="divider"></div>
 
@@ -47,6 +45,16 @@ export default defineComponent({
   },
   props: {
     user: Object,
+  },
+  data() {
+    return {
+      meta: {},
+    };
+  },
+  created() {
+    this.user.metas.forEach(e => {
+      this.meta[e.meta_name] = e.meta_val
+    });
   },
 });
 </script>

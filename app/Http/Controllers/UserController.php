@@ -50,7 +50,7 @@ class UserController extends Controller
     {
         $user = User::where('username', $user)
             ->firstOrFail()
-            ->load('gigs', 'seller_ratings.buyer', 'buyer_ratings.seller');
+            ->load('gigs', 'seller_ratings.buyer', 'buyer_ratings.seller', 'metas');
         return Inertia::render('Users/Show', [
             'user' => $user,
             'canLogin' => Route::has('login'),

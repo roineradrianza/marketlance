@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@heroicons/vue": "^1.0.5",
-        "daisyui": "^1.14.7"
+        "daisyui": "^1.14.7",
+        "moment": "^2.29.1"
     }
 }
