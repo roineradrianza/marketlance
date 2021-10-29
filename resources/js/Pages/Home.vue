@@ -1,10 +1,7 @@
 <template>
   <Head title="Home" />
-
-  <div class="min-h-screen dark:bg-gray-900 sm:pt-0">
-    <Header :canLogin="canLogin" :canRegister="canRegister" />
-
-    <div class="hero min-h-screen ">
+  <Layout :canLogin="canLogin" :canRegister="canRegister">
+    <div class="hero min-h-screen">
       <div class="flex-col hero-content lg:flex-row-reverse">
         <img
           src="https://images.unsplash.com/photo-1634058844916-c82605c76a9c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -89,12 +86,12 @@
         </div>
       </div>
     </div>
-  </div>
-  <Footer/>
+  </Layout>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import Layout from "@/Layouts/App.vue";
 import Header from "@/Layouts/Header.vue";
 import Footer from "@/Layouts/Footer.vue";
 import Gig from "@/Pages/Gigs/Card.vue";
@@ -104,6 +101,7 @@ export default defineComponent({
   components: {
     Head,
     Link,
+    Layout,
     Gig,
     Header,
     Footer,
