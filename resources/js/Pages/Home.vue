@@ -1,6 +1,6 @@
 <template>
   <Head title="Home" />
-  <Layout :canLogin="canLogin" :canRegister="canRegister">
+  <Layout>
     <div class="hero min-h-screen">
       <div class="flex-col hero-content lg:flex-row-reverse">
         <img
@@ -108,8 +108,6 @@ export default defineComponent({
   },
 
   props: {
-    canLogin: Boolean,
-    canRegister: Boolean,
     gigs: Array,
   },
 });

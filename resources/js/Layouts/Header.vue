@@ -19,7 +19,7 @@
         </Link>
       </div>
       <div class="col-span-9 flex justify-end items-center">
-        <template v-if="canLogin">
+        <template v-if="$page.props.canLogin">
           <Link
             v-if="$page.props.user"
             :href="route('dashboard')"
@@ -34,7 +34,7 @@
             </Link>
 
             <Link
-              v-if="canRegister"
+              v-if="$page.props.canRegister"
               :href="route('register')"
               class="ml-4 text-sm text-white underline"
             >

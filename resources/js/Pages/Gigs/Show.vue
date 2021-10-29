@@ -1,6 +1,6 @@
 <template>
   <Head :title="gig.title" />
-  <Layout :canLogin="canLogin" :canRegister="canRegister">
+  <Layout>
     <div class="flex justify-center">
       <div class="container pt-20 md:pb-20 px-5 md:px-20 justify-center">
         <div class="grid grid-cols-12 gap-6 pt-10">
@@ -58,8 +58,6 @@ export default defineComponent({
   },
 
   props: {
-    canLogin: Boolean,
-    canRegister: Boolean,
     gig: Object,
   },
 });

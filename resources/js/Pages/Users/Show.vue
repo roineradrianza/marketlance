@@ -1,6 +1,6 @@
 <template>
   <Head :title="user.name" />
-  <Layout :canLogin="canLogin" :canRegister="canRegister">
+  <Layout>
     <div class="flex justify-center">
       <div class="container pt-20 md:pb-20 px-1 md:px-20">
         <div class="grid grid-cols-12 gap-12 md:pt-10">
@@ -101,8 +101,6 @@ export default defineComponent({
   },
 
   props: {
-    canLogin: Boolean,
-    canRegister: Boolean,
     user: Object,
   },
 
