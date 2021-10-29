@@ -8,14 +8,14 @@
     </div>
     <div>
       <span class="footer-title">Services</span>
-      <a
+      <Link
         class="link link-hover capitalize"
         :href="'category/' + category.slug"
         v-for="(category, i) in $page.props.categories"
         :key="i"
       >
         {{ category.name }}
-      </a>
+      </Link>
     </div>
     <div>
       <span class="footer-title">Legal</span>

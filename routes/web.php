@@ -15,7 +15,7 @@ use Inertia\Inertia;
 |
  */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => '{user}', 'as' => 'username.'], function () {
 
     Route::get('/', [UserController::class, 'show'])->name('show');

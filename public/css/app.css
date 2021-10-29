@@ -3280,10 +3280,6 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 }
-.mx-2 {
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -3802,9 +3798,6 @@ html {
 }
 .p-3 {
 	padding: 0.75rem;
-}
-.p-4 {
-	padding: 1rem;
 }
 .px-4 {
 	padding-left: 1rem;
@@ -4580,16 +4573,12 @@ html {
 		grid-column: span 5 / span 5;
 	}
 
-	.md\:col-span-8 {
-		grid-column: span 8 / span 8;
-	}
-
-	.md\:col-span-6 {
-		grid-column: span 6 / span 6;
-	}
-
 	.md\:col-span-12 {
 		grid-column: span 12 / span 12;
+	}
+
+	.md\:col-span-8 {
+		grid-column: span 8 / span 8;
 	}
 
 	.md\:mt-0 {

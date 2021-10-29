@@ -7,12 +7,12 @@
       <h2 class="card-title">{{ gig.title }}</h2>
 
       <div class="justify-center card-actions">
-        <a
+        <Link
           class="btn btn-outline btn-white"
           :href="route('username.gig.show', [gig.user.username, gig.slug])"
         >
           ${{ parseFloat(gig.packages[0].price).toFixed(2) }}
-        </a>
+        </Link>
       </div>
     </div>
   </div>

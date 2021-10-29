@@ -1,5 +1,5 @@
 <template>
-  <a :href="route('username.show', author.username)">
+  <Link :href="route('username.show', author.username)">
     <div class="card-body">
       <div class="card shadow-lg compact side bg-base-100">
         <div class="flex-row items-center space-x-4 card-body">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </a>
+  </Link>
 </template>
 
 <script>
