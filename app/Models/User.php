@@ -30,6 +30,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'telephone',
+        'country',
         'email',
         'password',
     ];
@@ -93,7 +96,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Rating::class, 'seller_id', 'id');
     }
-
 
     public function educations()
     {

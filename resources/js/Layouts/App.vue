@@ -23,7 +23,7 @@ export default defineComponent({
   props: {
     title: String,
     canLogin: Boolean,
-    Register: Boolean,
+    canRegister: Boolean,
   },
 
   components: {
@@ -39,10 +39,6 @@ export default defineComponent({
     };
   },
 
-  methods: {
-    logout() {
-      this.$inertia.post(route("logout"));
-    },
-  },
+  
 });
 </script>

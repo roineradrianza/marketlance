@@ -33,6 +33,7 @@ class UserFactory extends Factory
             'online' => rand(0, 1), //user online status
             'balance' => rand(30, 700), //user money balance
             'telephone' => $this->faker->phoneNumber(), //user telephone
+            'country' => $this->faker->country(), //user country
             'profile_photo_path' => $this->faker->imageUrl(),
             'remember_token' => Str::random(10),
         ];

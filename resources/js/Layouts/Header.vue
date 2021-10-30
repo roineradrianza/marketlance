@@ -20,13 +20,17 @@
       </div>
       <div class="col-span-9 flex justify-end items-center">
         <template v-if="$page.props.canLogin">
-          <Link
-            v-if="$page.props.user"
-            :href="route('dashboard')"
-            class="text-sm text-white underline"
-          >
-            Dashboard
-          </Link>
+          <template v-if="$page.props.user">
+            <Link
+              :href="route('dashboard')"
+              class="text-sm text-white underline"
+            >
+              Dashboard
+            </Link>
+            <form @submit.prevent="logout">
+              <jet-dropdown-link as="button"> Log Out </jet-dropdown-link>
+            </form>
+          </template>
 
           <template v-else>
             <Link :href="route('login')" class="text-sm text-white underline">
@@ -50,17 +54,24 @@
 <script>
 import { defineComponent } from "vue";
 import ApplicationLogo from "@/Jetstream/ApplicationLogoWhite.vue";
+import JetDropdownLink from "@/Jetstream/DropdownLink.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 
 export default defineComponent({
   components: {
     Link,
+    JetDropdownLink,
     ApplicationLogo,
   },
 
   props: {
     canLogin: Boolean,
     canRegister: Boolean,
+  },
+  methods: {
+    logout() {
+      this.$inertia.post(route("logout"));
+    },
   },
 });
 </script>

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->float('balance')->default(0.00);
             $table->tinyText('currency')->default('USD');
             $table->string('telephone', 25)->nullable();
+            $table->string('country')->nullable();
             $table->string('password');
             $table->rememberToken();
 
