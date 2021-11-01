@@ -20093,7 +20093,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     logout: function logout() {
-      this.$inertia.post(route('logout'));
+      this.$inertia.post(route("logout"));
     }
   }
 }));
@@ -20489,13 +20489,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        name: '',
-        username: '',
-        email: '',
-        telephone: '',
-        country: '',
-        password: '',
-        password_confirmation: '',
+        name: "",
+        username: "",
+        email: "",
+        telephone: "",
+        country: "",
+        password: "",
+        password_confirmation: "",
         terms: false
       })
     };
@@ -20504,16 +20504,16 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      this.form.post(this.route('register'), {
+      this.form.post(this.route("register"), {
         onFinish: function onFinish() {
-          return _this.form.reset('password', 'password_confirmation');
+          return _this.form.reset("password", "password_confirmation");
         }
       });
     },
     onTelephoneInput: function onTelephoneInput(phone, phoneObject, input) {
       if (phoneObject !== undefined) {
-        this.form.telephone = phoneObject.hasOwnProperty('formatted') ? phoneObject.formatted : '';
-        this.form.country = phoneObject.hasOwnProperty('country') ? phoneObject.country.name : '';
+        this.form.telephone = phoneObject.hasOwnProperty("formatted") ? phoneObject.formatted : "";
+        this.form.country = phoneObject.hasOwnProperty("country") ? phoneObject.country.name : "";
       }
     }
   }
@@ -21958,7 +21958,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-base-100"
+  "class": "min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-base-200"
 };
 var _hoisted_2 = {
   "class": "w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-lg overflow-hidden sm:rounded-lg"
